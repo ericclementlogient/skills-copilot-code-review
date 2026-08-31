@@ -664,3 +664,106 @@ footer {
 #logout-button:hover {
   background-color: rgba(255, 255, 255, 0.3);
 }
+
+/* Only signed-in users can manage announcements */
+body.not-authenticated #manage-announcements-button {
+  display: none;
+}
+
+/* Announcement banner shown to all visitors */
+.announcement-banner {
+  background-color: #388e3c;
+  color: white;
+  text-align: center;
+  padding: 12px 20px;
+  font-weight: 500;
+}
+
+.announcement-item + .announcement-item {
+  margin-top: 6px;
+}
+
+/* Announcements management modal */
+.announcements-modal-content {
+  max-width: 520px;
+  text-align: left;
+}
+
+.announcements-modal-content h3 {
+  color: var(--primary);
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+#announcement-message {
+  width: 100%;
+  min-height: 70px;
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.form-group-row {
+  display: flex;
+  gap: 12px;
+}
+
+.form-group-row > div {
+  flex: 1;
+}
+
+.announcement-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.announcements-list {
+  margin-top: 18px;
+  max-height: 260px;
+  overflow-y: auto;
+  border-top: 1px solid var(--border-light);
+  padding-top: 10px;
+}
+
+.announcement-list-item {
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.announcement-list-message {
+  font-weight: 500;
+}
+
+.announcement-list-dates {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  margin: 4px 0 8px;
+}
+
+.announcement-list-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.announcement-list-actions button {
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+.edit-announcement-btn {
+  background-color: var(--primary-light);
+  color: white;
+}
+
+.delete-announcement-btn {
+  background-color: var(--error);
+  color: white;
+}
+
