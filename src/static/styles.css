@@ -767,3 +767,10 @@ body.not-authenticated #manage-announcements-button {
   color: white;
 }
 
+.announcement-banner {
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-weight: bold;
+}
