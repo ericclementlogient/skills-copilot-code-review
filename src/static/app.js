@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const loginMessage = document.getElementById("login-message");
 
   // Announcement elements
-  const announcementBanner = document.getElementById("announcement-banner");
+  const announcementBanner = document.querySelector(".announcement-banner");
   const manageAnnouncementsButton = document.getElementById("manage-announcements-button");
   const announcementsModal = document.getElementById("announcements-modal");
   const closeAnnouncementsModal = document.querySelector(".close-announcements-modal");
