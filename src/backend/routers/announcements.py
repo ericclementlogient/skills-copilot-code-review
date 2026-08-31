@@ -70,10 +70,18 @@ def create_announcement(
     """Create a new announcement - requires teacher authentication"""
     _require_teacher(teacher_username)
 
-    if start_date and start_date > expiration_date:
+    try:
+        expiration = date.fromisoformat(expiration_date)
+        start = date.fromisoformat(start_date) if start_date else None
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail="Dates must be in YYYY-MM-DD format") from exc
+
+    if start and start > expiration:
         raise HTTPException(
             status_code=400, detail="Start date must be before the expiration date")
 
+    expiration_date = expiration.isoformat()
+    start_date = start.isoformat() if start else None
     announcement = {
         "_id": str(uuid.uuid4()),
         "message": message,
