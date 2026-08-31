@@ -342,14 +342,14 @@ document.addEventListener("DOMContentLoaded", () => {
     announcementsList.innerHTML = announcements
       .map(
         (announcement) => `
-          <div class="announcement-list-item" data-id="${announcement.id}">
+          <div class="announcement-list-item" data-id="${escapeHtml(String(announcement.id))}">
             <p class="announcement-list-message">${escapeHtml(announcement.message)}</p>
             <p class="announcement-list-dates">
-              ${announcement.start_date ? `From ${announcement.start_date} ` : ""}Until ${announcement.expiration_date}
+              ${announcement.start_date ? `From ${escapeHtml(announcement.start_date)} ` : ""}Until ${escapeHtml(announcement.expiration_date)}
             </p>
             <div class="announcement-list-actions">
-              <button type="button" class="edit-announcement-btn" data-id="${announcement.id}">Edit</button>
-              <button type="button" class="delete-announcement-btn" data-id="${announcement.id}">Delete</button>
+              <button type="button" class="edit-announcement-btn" data-id="${escapeHtml(String(announcement.id))}">Edit</button>
+              <button type="button" class="delete-announcement-btn" data-id="${escapeHtml(String(announcement.id))}">Delete</button>
             </div>
           </div>
         `
